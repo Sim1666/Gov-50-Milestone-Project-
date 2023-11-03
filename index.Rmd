@@ -1,6 +1,6 @@
 ---
 title: "Gov 50 Final Project"
-author: "Your Name Here"
+author: "Simone Pena"
 description: "My final project"
 output:
   distill::distill_article:
@@ -11,4 +11,7 @@ output:
 
 ## Project thoughts
 
-I am interested in exploring data related to...
+I intend to embark on a project that delves deeply into the realm of adolescent health, focusing on data influencing the emergence of eating disorders in teenagers. This endeavor is driven by a keen interest in comprehending the multifaceted dynamics at play in the lives of adolescents and their vulnerability to conditions like eating disorders.
+
+The objective of my project is to meticulously examine the data related to this critical issue, unearthing the intricate connections between various determinants and the onset of eating disorders. This research endeavor aspires to transcend the surface level and reach into the depths of this complex phenomenon. We will explore not only the individual factors such as genetics, body image dissatisfaction, and psychological factors but also the societal influences, like media portrayal and peer pressure, that play a pivotal role in shaping the mental and emotional well-being of adolescents.
+
