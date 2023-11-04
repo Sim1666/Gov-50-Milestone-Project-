@@ -15,3 +15,55 @@ I intend to embark on a project that delves deeply into the realm of adolescent 
 
 The objective of my project is to meticulously examine the data related to this critical issue, unearthing the intricate connections between various determinants and the onset of eating disorders. This research endeavor aspires to transcend the surface level and reach into the depths of this complex phenomenon. We will explore not only the individual factors such as genetics, body image dissatisfaction, and psychological factors but also the societal influences, like media portrayal and peer pressure, that play a pivotal role in shaping the mental and emotional well-being of adolescents.
 
+
+## Milestone 2 
+
+```{r}
+library(tidyverse)
+read.csv("eating-disorder-dataset/data/eating_disorder.csv") 
+read.csv("prevalence-of-eating-disorders-in-males-vs-females.csv")
+
+
+```
+
+Is there a higher incidence of eating disorders among teenagers and young adults, and what factors might contribute to this phenomenon?
+
+This research project aims to investigate potential trends and underlying factors responsible for the emergence of eating disorders in teenagers and young adults. The primary hypothesis posits that the susceptibility of this age group, coupled with their increased exposure to the influences of social media, might make them more prone to developing eating disorders. Additionally, this study seeks to explore the connection between a nation's level of development and the likelihood of its population adopting unhealthy lifestyles due to a lack of resources that promote balanced dietary habits and a healthy way of living.
+
+In summary, the research will delve into the prevalence of eating disorders among adolescents and young adults and consider the influence of societal and developmental factors that may contribute to this prevalence.
+
+## Milestone 3
+
+```{r}
+
+
+prevalence_eating_disorders <- read.csv("prevalence-of-eating-disorders-in-males-vs-females.csv")
+
+
+males_prevalence <- data("Prevalence - Eating disorders - Sex: Male - Age: Age-standardized (Percent)")
+females_prevalence <- data("Prevalence - Eating disorders - Sex: Female - Age: Age-standardized (Percent)")
+
+data <- data.frame(Sex = c("Males", "Females"), Percentage = c(males_prevalence, females_prevalence))
+
+ggplot(data, aes(x = Sex, y = Percentage, fill = Sex)) +
+  geom_col(stat = "identity") +
+  labs(title = "Prevalence of Eating Disorders in Males vs. Females",
+       x = "Sex",
+       y = "Percentage (%)") 
+
+  
+```
+
+
+The provided visual is a bar graph that presents a comparative analysis of the prevalence of eating disorders between two gender groups, namely males and females. The data in this graph illustrates an unexpected finding, as it reveals that there is a higher prevalence of eating disorders among males of average age, in contrast to females. This observation contradicts common societal expectations, which tend to assume that eating disorders are more commonly associated with females due to the influence of social media and prevailing stereotypes.
+
+The unexpected prevalence of eating disorders among males could potentially be attributed to various factors such as evolving societal pressures, changing beauty ideals, and increasing awareness and recognition of these disorders among males. These trends may indicate a need for broader and more inclusive discussions and support systems for individuals struggling with eating disorders, regardless of their gender.
+
+Furthermore, the findings from this visual underscore the importance of avoiding stereotyping based on gender and highlight the necessity of approaching mental health issues, such as eating disorders, with a more open and unbiased perspective. It is essential to recognize that these disorders can affect individuals of any gender and that addressing them should involve tailored support and resources for everyone.
+
+
+
+
+
+
+
