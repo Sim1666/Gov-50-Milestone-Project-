@@ -20,7 +20,6 @@ The objective of my project is to meticulously examine the data related to this 
 
 ```{r}
 library(tidyverse)
-read.csv("eating-disorder-dataset/data/eating_disorder.csv") 
 read.csv("prevalence-of-eating-disorders-in-males-vs-females.csv")
 
 
