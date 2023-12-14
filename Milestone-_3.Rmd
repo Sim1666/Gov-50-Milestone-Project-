@@ -1,0 +1,171 @@
+---
+title: "Gov 50 Final Project"
+author: "Simone Pena"
+description: "My final project"
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+
+## Project thoughts
+
+I intend to embark on a project that delves deeply into the realm of adolescent health, focusing on data influencing the emergence of eating disorders in teenagers. This endeavor is driven by a keen interest in comprehending the multifaceted dynamics at play in the lives of adolescents and their vulnerability to conditions like eating disorders.
+
+The objective of my project is to meticulously examine the data related to this critical issue, unearthing the intricate connections between various determinants and the onset of eating disorders. This research endeavor aspires to transcend the surface level and reach into the depths of this complex phenomenon. We will explore not only the individual factors such as genetics, body image dissatisfaction, and psychological factors but also the societal influences, like media portrayal and peer pressure, that play a pivotal role in shaping the mental and emotional well-being of adolescents.
+
+
+## Milestone 2 
+
+```{r}
+library(tidyverse)
+read.csv("prevalence-of-eating-disorders-in-males-vs-females.csv")
+
+```
+
+Is there a higher incidence of eating disorders among teenagers and young adults, and what factors might contribute to this phenomenon?
+
+This research project aims to investigate potential trends and underlying factors responsible for the emergence of eating disorders in teenagers and young adults. The primary hypothesis posits that the susceptibility of this age group, coupled with their increased exposure to the influences of social media, might make them more prone to developing eating disorders. Additionally, this study seeks to explore the connection between a nation's level of development and the likelihood of its population adopting unhealthy lifestyles due to a lack of resources that promote balanced dietary habits and a healthy way of living.
+
+In summary, the research will delve into the prevalence of eating disorders among adolescents and young adults and consider the influence of societal and developmental factors that may contribute to this prevalence.
+
+## Milestone 3
+
+```{r}
+library(ggplot2) 
+prevalence_eating_disorders <- read.csv("prevalence-of-eating-disorders-in-males-vs-females.csv")
+lookup <-  c(males_prevalence = "Eating_Disorders_Males", females_prevalence = "Eating_Disorders_Females")
+
+ggplot(prevalence_eating_disorders, aes(x = Year)) +
+  geom_line(aes(y = "Eating Disorders in Males", color = "Gender"), size = 1.5) +
+  geom_line(aes(y = "Eating Disorders in Females", color = "Gender"), size = 1.5) +
+  labs(title = "Prevalence of Eating Disorders Over Time",
+       x = "Year",
+       y = "Prevalence",
+       color = "Gender") +
+  scale_color_manual(values = c("Eating Disorders in Males" = "blue", "Eating Disorders in Females" = "pink"))
+
+
+```
+
+
+```{r}
+
+library(ggplot2)
+library(dplyr)
+
+prevalence_eating_disorders <- read.csv("prevalence-of-eating-disorders-in-males-vs-females.csv")
+
+# Example: Creating separate line plots for Eating Disorders prevalence over time for Males and Females
+ggplot(prevalence_eating_disorders, aes(x = Year, y = "Eating Disorders in Males", group = 1)) +
+  geom_line(color = "blue", size = 1.5) +
+  labs(title = "Eating Disorders Prevalence Over Time for Males",
+       x = "Year",
+       y = "Prevalence")
+
+
+ggplot(prevalence_eating_disorders, aes(x = Year, y = "Eating Disorders in Females", group = 1)) +
+  geom_line(color = "pink", size = 1.5) +
+  labs(title = "Eating Disorders Prevalence Over Time for Females",
+       x = "Year",
+       y = "Prevalence") 
+
+
+```
+
+In the preceding visual analysis, my objective was to undertake a comparative examination of the prevalence of Eating Disorders across historical periods, specifically focusing on gender differentials among both males and females. The temporal scope of this investigation spanned from the 18th century, commencing in 1700, through to the contemporary era in 2020. The intention was to discern and elucidate any discernible patterns or shifts in the manifestation of Eating Disorders within the context of evolving societal norms and structures over this extended temporal trajectory.
+
+
+
+```{r}
+
+library(ggplot2)
+library(dplyr)
+
+prevalence_eating_disorders <- read.csv("prevalence-of-eating-disorders-in-males-vs-females.csv")
+
+ggplot(prevalence_eating_disorders, aes(x = Year)) +
+  geom_line(aes(y = "Eating Disorders in Males", color = Entity, linetype = "Males"), size = 1.5) +
+  geom_line(aes(y = "Eating Disorders in Females", color = Entity, linetype = "Females"), size = 1.5) +
+  labs(title = "Comparison of Eating Disorders in Males vs Females Over Time by Entity",
+       x = "Year",
+       y = "Prevalence",
+       linetype = "Gender") +
+  theme_minimal()
+
+
+```
+
+
+Through this visual representation, my aim was to illustrate and emphasize the countries where the prevalence of Eating Disorders has exhibited a notable trend among the populace, encompassing both genders—both male and female. The focus was on identifying regions where the phenomenon of Eating Disorders has gained prominence and understanding the dynamics of its occurrence across different demographic groups. By highlighting such patterns, the intention was to provide a clearer insight into the geographical and gender-related variations in the prevalence of Eating Disorders on a global scale.
+
+# Milestone 4 
+
+```{r}
+library(skimr)
+
+summary_table <- skim(prevalence_eating_disorders)
+
+
+
+print(summary_table)
+
+
+```
+
+The summary table, generated using the `skimr` package in R, presents an overview of the dataset on the prevalence of eating disorders. Below is a breakdown of the key information contained in the table:
+
+1. **Year:**
+   - No missing values.
+   - Complete rate: 100%
+   - Mean: 1959.626
+   - Standard deviation: 51.17476
+   - Minimum value: 1700
+
+2. **Eating Disorders in Males:**
+   - 15,611 missing values.
+   - Complete rate: 29.29%
+   - Mean: 0.140061
+   - Standard deviation: 0.07830151
+   - Minimum value: 0.04838617
+
+3. **Eating Disorders in Females:**
+   - 15,611 missing values.
+   - Complete rate: 29.29%
+   - Mean: 0.3400593
+   - Standard deviation: 0.2405459
+   - Minimum value: 0.09850132
+
+4. **Total Population (Gapminder):**
+   - 1,998 missing values.
+   - Complete rate: 90.95%
+   - Mean: 20,772,030
+   - Standard deviation: 84,002,120
+   - Minimum value: 0
+
+The summary provides an overview of the central tendency, spread, and missing data for each variable in the dataset. Notably, the prevalence of eating disorders in males and females, along with the total population, is presented alongside the corresponding descriptive statistics. The dataset seems to contain historical data spanning from the year 1700, and the prevalence of eating disorders is differentiated by gender. Additionally, information on the total population based on Gapminder data is included.
+
+# Final Project Conclusion and Modifications 
+
+**Introduction:**
+
+Throughout the course of this project, my initial research underwent modifications, refining its focus and scope. However, the central research question driving this analysis revolves around examining the evolving trends and patterns in the prevalence of eating disorders among both males and females over time. The total population is considered as a contextual factor, aiming to understand how changes in eating disorder rates may vary between genders. The primary hypothesis suggests that significant shifts in these rates might occur, emphasizing the importance of comprehending these dynamics to inform targeted public health initiatives and interventions. This research holds significance as it has the potential to offer valuable insights into the epidemiology of eating disorders, providing guidance for strategies related to prevention, early detection, and treatment.
+
+**Data Section:**
+
+The data set, titled "prevalence-of-eating-disorders-in-males-vs-females.csv," encompasses key variables including `Entity`, `Year`, `Eating Disorders in Males`, `Eating Disorders in Females`, and `Total Population (Gapminder)`. During exploratory data analysis, I delved into examining temporal trends and visualizing the main outcome of interest. The intention was to create a line plot illustrating the evolving landscape of eating disorders among both genders in the context of the total population.
+
+**Description and Interpretation:**
+
+The focal point for interpretation was anticipated to be the coefficient related to eating disorders in males and females. Speculation about statistical significance guided the assessment of how gender might impact eating disorders, with due consideration given to the total population as a potential confounding factor. The ensuing discussion could extend to exploring potential implications for public health policies and interventions.
+
+**Conclusion Section:**
+
+In summary, the results of this analysis contradicted the initial hypothesis, revealing insights into temporal trends in eating disorders among different genders. Notably, the trends indicated that males may be more susceptible to the development of eating disorders. The analysis encountered limitations, including missing data and confounding variables, highlighting the complexities inherent in the data. In addition, to the lack of data sets in relation to eating disorders and emphasis on the matter.Suggestions for improvement were proposed, emphasizing the need for more comprehensive data and additional controls for confounding.This study could potential contribute significantly to the ongoing discourse on eating disorders, stressing the necessity for nuanced and targeted interventions.
+
+# Original data set modification 
+- Prevalence - Eating disorders - Sex: Male - Age: Age-standardized (Percent) / modify into : Eating disorders in Males
+- Prevalence - Eating disorders - Sex: Female - Age: Age-standardized (Percent) / modify into:  Eating disorders in Females.
+
+
