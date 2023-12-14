@@ -107,10 +107,7 @@ library(skimr)
 
 summary_table <- skim(prevalence_eating_disorders)
 
-
-
 print(summary_table)
-
 
 ```
 
