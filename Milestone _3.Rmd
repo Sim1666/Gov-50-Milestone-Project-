@@ -168,4 +168,3 @@ In summary, the results of this analysis contradicted the initial hypothesis, re
 - Prevalence - Eating disorders - Sex: Male - Age: Age-standardized (Percent) / modify into : Eating disorders in Males
 - Prevalence - Eating disorders - Sex: Female - Age: Age-standardized (Percent) / modify into:  Eating disorders in Females.
 
-
