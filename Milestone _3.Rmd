@@ -70,8 +70,6 @@ ggplot(prevalence_eating_disorders, aes(x = Year, y = "Eating Disorders in Femal
   labs(title = "Eating Disorders Prevalence Over Time for Females",
        x = "Year",
        y = "Prevalence") 
-
-
 ```
 
 In the preceding visual analysis, my objective was to undertake a comparative examination of the prevalence of Eating Disorders across historical periods, specifically focusing on gender differentials among both males and females. The temporal scope of this investigation spanned from the 18th century, commencing in 1700, through to the contemporary era in 2020. The intention was to discern and elucidate any discernible patterns or shifts in the manifestation of Eating Disorders within the context of evolving societal norms and structures over this extended temporal trajectory.
