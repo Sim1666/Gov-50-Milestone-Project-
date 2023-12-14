@@ -1,4 +1,4 @@
-Entity,Code,Year,Prevalence - Eating disorders - Sex: Male - Age: Age-standardized (Percent),Prevalence - Eating disorders - Sex: Female - Age: Age-standardized (Percent),Total population (Gapminder),Continent
+﻿Entity,Code,Year,Eating disorders in Males,Eating disorders in Females,Total population (Gapminder),Continent
 Abkhazia,OWID_ABK,2015,,,,Asia
 Afghanistan,AFG,1990,0.060602901,0.140029764,13032161,
 Afghanistan,AFG,1991,0.059344636,0.136398466,14069854,
@@ -16655,7 +16655,7 @@ Rwanda,RWA,1986,,,6356230,
 Rwanda,RWA,1987,,,6672124,
 Rwanda,RWA,1988,,,6959599,
 Rwanda,RWA,1989,,,7124870,
-Saint Barthélemy,BLM,2015,,,,North America
+Saint Barth√©lemy,BLM,2015,,,,North America
 Saint Helena,SHN,1800,,,1997,
 Saint Helena,SHN,1820,,,1997,
 Saint Helena,SHN,1854,,,6300,
@@ -22077,4 +22077,4 @@ Zimbabwe,ZWE,1986,,,9189169,
 Zimbabwe,ZWE,1987,,,9523376,
 Zimbabwe,ZWE,1988,,,9852244,
 Zimbabwe,ZWE,1989,,,10169188,
-Åland Islands,ALA,2015,,,,Europe
+√Öland Islands,ALA,2015,,,,Europe
